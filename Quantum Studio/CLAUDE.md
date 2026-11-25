@@ -1,13 +1,12 @@
-]\
-
 # Quantum Experiment Studio
 
 ## Project Overview
 
-Monorepo for a quantum circuit experimentation platform. Two npm workspaces:
+Monorepo for a quantum computing experimentation and research platform. It consists of three coordinated services:
 
 - **client/** — React 18 + TypeScript SPA built with Vite (port 5173)
-- **server/** — Express + TypeScript API (port 3001)
+- **server/** — Express + TypeScript API Gateway and Job Runner (port 3001)
+- **simulation-service/** — FastAPI + Python 3.12 Qiskit Simulation & QML Engine (port 8000)
 
 ## Quick Reference
 
@@ -34,9 +33,9 @@ npm run test:client  # Client circuit domain tests only
   - `mongo.ts`: `connectMongo()`, `getDb()`, `getClient()`, `closeMongo()` helpers
   - Credentials masked in logs; fail-fast on missing/invalid connection
 - `server/src/auth/` — Auth handlers, router, password hashing (Argon2id), session management
-- `server/src/simulations/` — Simulation job API: repository, handlers, router, validation, runner, and Python execution script
-  - Job runner polls queue with concurrency limit, spawns Python subprocess per job
-  - `simulate.py` executes OpenQASM via Qiskit AerSimulator (Python venv at `server/.venv`)
+- `server/src/simulations/` — Simulation job API: repository, handlers, router, validation, runner, and simulation proxy
+  - Job runner polls queue with concurrency limit, forwards simulation requests via HTTP to `simulation-service` (port 8000)
+  - Results stored in MongoDB upon completion with automatic retry and keep-alive pinger
   - Resource limits configurable via `SIM_MAX_*` env vars (shots, qubits, depth, execution time, concurrent jobs)
   - Results endpoint returns server-computed probabilities (counts/shots, 4dp); export endpoint supports JSON and CSV download with stable sort order
 - `server/src/experiments/` — Experiment persistence: repository with ownership-scoped CRUD, soft-delete, optimistic concurrency (rowVersion), paginated listing, raw export, and schema versioning with in-memory migration on load (defer-save)
