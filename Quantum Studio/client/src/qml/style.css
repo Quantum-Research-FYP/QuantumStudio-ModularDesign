@@ -1,0 +1,84 @@
+/* QML style.css — Synced with Quantum Studio dynamic palette */
+:root,
+[data-theme="dark"] {
+  --text: var(--color-text-muted, #94a3b8);
+  --text-h: var(--color-text, #e2e8f0);
+  --bg: var(--color-bg, #070d1a);
+  --border: var(--color-border, rgba(148, 163, 184, 0.09));
+  --code-bg: var(--color-surface-2, #121e38);
+  --accent: var(--color-primary, #22d3ee);
+  --accent-bg: var(--color-primary-dim, rgba(34, 211, 238, 0.1));
+  --accent-border: var(--color-primary-glow, rgba(34, 211, 238, 0.2));
+  --social-bg: var(--color-surface-3, #192b50);
+  --shadow: rgba(0, 0, 0, 0.5) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Outfit', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+}
+
+[data-theme="light"] {
+  --text: var(--color-text-muted, #334155);
+  --text-h: var(--color-text, #0f172a);
+  --bg: var(--color-bg, #f8fafc);
+  --border: var(--color-border, rgba(15, 23, 42, 0.07));
+  --code-bg: var(--color-surface-2, #f1f5f9);
+  --accent: var(--color-primary, #0891b2);
+  --accent-bg: var(--color-primary-dim, rgba(8, 145, 178, 0.08));
+  --accent-border: var(--color-primary-glow, rgba(8, 145, 178, 0.15));
+  --social-bg: var(--color-surface-3, #e2e8f0);
+  --shadow: rgba(15, 23, 42, 0.08) 0 10px 15px -3px, rgba(15, 23, 42, 0.04) 0 4px 6px -2px;
+
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

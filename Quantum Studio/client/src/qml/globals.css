@@ -1,0 +1,127 @@
+/* ------------------------------------------------------------------ */
+/* Quantum Studio Standard Palette Integration for QML Module          */
+/* Scoped to .qml-scope so it NEVER leaks to Quantum Studio pages      */
+/* ------------------------------------------------------------------ */
+
+.qml-scope,
+[data-theme="dark"] .qml-scope {
+  color-scheme: dark;
+
+  /* Quantum Studio Standard Backgrounds & Surfaces */
+  --color-canvas: var(--color-bg, #070d1a);
+  --color-surface-soft: var(--color-surface-2, #121e38);
+  --color-surface-raised: var(--color-surface-3, #192b50);
+
+  /* Quantum Studio Standard Text */
+  --color-text-primary: var(--color-text, #e2e8f0);
+  --color-text-secondary: var(--color-text-muted, #94a3b8);
+  --color-text-muted: var(--color-text-subtle, #475569);
+
+  /* Quantum Studio Standard Primary: Cyan #22d3ee */
+  --color-brand-start: var(--color-primary, #22d3ee);
+  --color-brand-end: var(--color-primary-hover, #06b6d4);
+  --color-primary-soft: var(--color-primary-dim, rgba(34, 211, 238, 0.1));
+  --color-focus: var(--color-primary-glow, rgba(34, 211, 238, 0.2));
+
+  /* Quantum Studio Standard Accent: Violet #a78bfa */
+  --color-cover-glow: var(--color-accent, #a78bfa);
+  --color-cover-start: #070d1a;
+  --color-cover-middle: #121e38;
+  --color-cover-end: #192b50;
+  --color-on-accent: #070d1a;
+
+  /* Status Colors */
+  --color-danger: var(--color-error, #f87171);
+
+  /* Elevation & Overlays */
+  --color-scrim: rgba(7, 13, 26, 0.8);
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-overlay: rgba(13, 22, 39, 0.92);
+
+  /* Accent Tokens */
+  --color-purple-text: #c084fc;
+  --color-purple-soft: rgba(167, 139, 250, 0.12);
+  --color-purple-border: rgba(167, 139, 250, 0.28);
+  --color-purple-fill: #a78bfa;
+
+  --color-blue-text: #38bdf8;
+  --color-blue-soft: rgba(34, 211, 238, 0.12);
+  --color-blue-border: rgba(34, 211, 238, 0.28);
+  --color-blue-fill: #22d3ee;
+
+  --color-green-text: #34d399;
+  --color-green-soft: rgba(52, 211, 153, 0.12);
+  --color-green-border: rgba(52, 211, 153, 0.28);
+  --color-green-fill: #10b981;
+
+  --color-red-text: #f87171;
+  --color-red-soft: rgba(248, 113, 113, 0.12);
+  --color-red-border: rgba(248, 113, 113, 0.28);
+  --color-red-fill: #ef4444;
+
+  --color-gold-text: #fbbf24;
+  --color-gold-soft: rgba(251, 191, 36, 0.12);
+  --color-gold-border: rgba(251, 191, 36, 0.28);
+  --color-gold-fill: #f59e0b;
+}
+
+[data-theme="light"] .qml-scope {
+  color-scheme: light;
+
+  /* Quantum Studio Standard Light Backgrounds & Surfaces */
+  --color-canvas: var(--color-bg, #f8fafc);
+  --color-surface-soft: var(--color-surface-2, #f1f5f9);
+  --color-surface-raised: var(--color-surface-3, #e2e8f0);
+
+  /* Quantum Studio Standard Light Text */
+  --color-text-primary: var(--color-text, #0f172a);
+  --color-text-secondary: var(--color-text-muted, #334155);
+  --color-text-muted: var(--color-text-subtle, #64748b);
+
+  /* Quantum Studio Standard Light Primary: Teal/Cyan #0891b2 */
+  --color-brand-start: var(--color-primary, #0891b2);
+  --color-brand-end: var(--color-primary-hover, #0e7490);
+  --color-primary-soft: var(--color-primary-dim, rgba(8, 145, 178, 0.08));
+  --color-focus: var(--color-primary-glow, rgba(8, 145, 178, 0.15));
+
+  /* Quantum Studio Standard Light Accent: Violet #7c3aed */
+  --color-cover-glow: var(--color-accent, #7c3aed);
+  --color-cover-start: #f8fafc;
+  --color-cover-middle: #f1f5f9;
+  --color-cover-end: #e2e8f0;
+  --color-on-accent: #ffffff;
+
+  /* Status Colors */
+  --color-danger: var(--color-error, #dc2626);
+
+  /* Elevation & Overlays */
+  --color-scrim: rgba(15, 23, 42, 0.45);
+  --color-shadow: rgba(15, 23, 42, 0.08);
+  --color-overlay: rgba(255, 255, 255, 0.95);
+
+  /* Accent Tokens */
+  --color-purple-text: #7c3aed;
+  --color-purple-soft: rgba(124, 58, 237, 0.08);
+  --color-purple-border: rgba(124, 58, 237, 0.2);
+  --color-purple-fill: #7c3aed;
+
+  --color-blue-text: #0284c7;
+  --color-blue-soft: rgba(2, 132, 199, 0.08);
+  --color-blue-border: rgba(2, 132, 199, 0.2);
+  --color-blue-fill: #0284c7;
+
+  --color-green-text: #059669;
+  --color-green-soft: rgba(5, 150, 105, 0.08);
+  --color-green-border: rgba(5, 150, 105, 0.2);
+  --color-green-fill: #059669;
+
+  --color-red-text: #dc2626;
+  --color-red-soft: rgba(220, 38, 38, 0.08);
+  --color-red-border: rgba(220, 38, 38, 0.2);
+  --color-red-fill: #dc2626;
+
+  --color-gold-text: #d97706;
+  --color-gold-soft: rgba(217, 119, 6, 0.08);
+  --color-gold-border: rgba(217, 119, 6, 0.2);
+  --color-gold-fill: #d97706;
+}
